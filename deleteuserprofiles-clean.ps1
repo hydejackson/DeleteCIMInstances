@@ -26,7 +26,7 @@ foreach ($Computer in $ComputerName) {
             $_.LocalPath.split('\')[-1] -notin $DefaultAccounts -and $_.LocalPath.split('\')[-1] -like 'fs*' 
         }
     } catch {
-        Write-Host "The computer name '$Computer' was probably not found. Try again and make sure the case is correct (e.g. `FS` instead of `fs`).
+        Write-Host "The computer name '$Computer' was probably not found.
         Usage: $Usage"
         continue
     }
