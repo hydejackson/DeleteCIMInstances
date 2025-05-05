@@ -80,7 +80,7 @@ foreach ($ComputerGroup in $ProfilesToDelete | Group-Object -Property PSComputer
 
     if ($RemoveCimInstanceErr) {
         $LogPath = "./DUPLog_$Computer.log"
-        Set-Content -Path $LogPath -Value $RemoveCimInstanceErr
+        Add-Content -Path $LogPath -Value $RemoveCimInstanceErr
         Write-Host "Non-terminating errors encountered on computer: $Computer. Logged in $LogPath."
     } else {
         Write-Host "Success: $Computer."
